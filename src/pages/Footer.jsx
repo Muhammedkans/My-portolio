@@ -1,37 +1,51 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaArrowUp } from "react-icons/fa";
 
 function Footer() {
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#2c5364] text-white py-6 mt-12 border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-        
-        {/* © Copy Text */}
-        <p className="text-sm text-white/70 text-center md:text-left">
-          © {new Date().getFullYear()} Muhammed Akans. All rights reserved.
-        </p>
+    <footer className="bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-8 mt-12">
+      <div className="max-w-4xl mx-auto px-6 flex flex-col items-center gap-4 text-center">
 
         {/* 🔗 Social Icons */}
-        <div className="flex gap-4 text-lg">
+        <div className="flex gap-6 text-xl">
           <a
             href="https://github.com/Muhammedkans"
             target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-yellow-300 transition"
+            rel="noreferrer"
+            className="hover:text-yellow-400 transition"
           >
             <FaGithub />
           </a>
           <a
             href="https://linkedin.com/in/muhammed-kans"
             target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-yellow-300 transition"
+            rel="noreferrer"
+            className="hover:text-yellow-400 transition"
           >
             <FaLinkedin />
           </a>
         </div>
+
+        {/* 🧾 Copyright */}
+        <p className="text-white/70 text-sm">
+          © {new Date().getFullYear()} Muhammed Akans. All rights reserved.
+        </p>
+
+        {/* ⬆️ Scroll to Top */}
+        <button
+          onClick={scrollTop}
+          className="mt-3 text-yellow-400 hover:text-yellow-300 text-sm flex items-center gap-1"
+        >
+          <FaArrowUp /> Back to Top
+        </button>
       </div>
     </footer>
   );
 }
 
 export default Footer;
+
+

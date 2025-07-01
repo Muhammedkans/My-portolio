@@ -1,83 +1,92 @@
-import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
-import { motion } from "framer-motion";
-
-const navItems = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Skills", path: "/skills" },
-  { name: "Projects", path: "/projects" },
-  { name: "Contact", path: "/contact" },
-];
+import { useState, useEffect } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = ["home", "about", "skills", "projects", "contact"];
 
   return (
-    <motion.nav
-      initial={{ y: -60 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/10 shadow-sm"
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#1f1f2e]/90 backdrop-blur shadow-lg"
+          : "bg-transparent"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* 🔰 Logo */}
-        <Link to="/" className="text-xl font-bold text-yellow-300 tracking-wide">
-          Akans.dev
-        </Link>
-
-        {/* 🔽 Desktop Nav */}
-        <ul className="hidden md:flex gap-6 text-white text-sm font-medium">
-          {navItems.map((item) => (
-            <li key={item.name}>
-              <NavLink
-                to={item.path}
-                className={({ isActive }) =>
-                  `relative px-2 py-1 hover:text-yellow-300 transition ${
-                    isActive ? "text-yellow-300" : ""
-                  }`
-                }
-              >
-                {item.name}
-                {/* Underline effect */}
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-yellow-300 transition-all duration-300 hover:w-full"></span>
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-
-        {/* 📱 Mobile Toggle */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setMenuOpen(!menuOpen)}
+        <ScrollLink
+          to="home"
+          smooth={true}
+          duration={500}
+          className="text-2xl font-bold text-yellow-400 cursor-pointer"
         >
-          {menuOpen ? "✖" : "☰"}
-        </button>
+          Akans.dev
+        </ScrollLink>
+
+        {/* 🖱️ Desktop Menu */}
+        <nav className="hidden md:flex gap-6 font-medium text-white/90">
+          {navItems.map((item) => (
+            <ScrollLink
+              key={item}
+              to={item}
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="text-yellow-300 border-b-2 border-yellow-400"
+              className="cursor-pointer hover:text-yellow-300 transition"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </ScrollLink>
+          ))}
+        </nav>
+
+        {/* 📱 Mobile Menu Toggle */}
+        <div
+          className="md:hidden text-white text-2xl cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </div>
       </div>
 
       {/* 📱 Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden px-6 pb-4">
-          <ul className="flex flex-col gap-4 text-white">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <NavLink
-                  to={item.path}
-                  onClick={() => setMenuOpen(false)}
-                  className="block px-2 py-1 hover:text-yellow-300"
-                >
-                  {item.name}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+      {isOpen && (
+        <div className="md:hidden bg-[#1f1f2e] px-6 pb-6 pt-2 space-y-3">
+          {navItems.map((item) => (
+            <ScrollLink
+              key={item}
+              to={item}
+              smooth={true}
+              duration={500}
+              offset={-80}
+              onClick={() => setIsOpen(false)}
+              className="block text-white text-lg font-medium cursor-pointer hover:text-yellow-300"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </ScrollLink>
+          ))}
         </div>
       )}
-    </motion.nav>
+    </header>
   );
 }
 
 export default Navbar;
+
+
 
 
 

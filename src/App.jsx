@@ -2,11 +2,11 @@ import './index.css';
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Skills from "./pages/skills";
+import Skills from "./pages/Skillss";
 import Projects from "./pages/Project";
 import Contact from "./pages/Contact";
 import Footer from './pages/Footer';
-import ScrollToTop from './components/ScrollTop';
+import ScrollToTopButton from './components/ScrollTop';
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
       </section>
 
       <Footer />
-      <ScrollToTop />
+      <ScrollToTopButton />
     </div>
   );
 }

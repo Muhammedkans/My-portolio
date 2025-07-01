@@ -1,87 +1,97 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projects = [
   {
     title: "DevChat",
-    description: "A real-time developer chat app using MERN Stack, Socket.IO, authentication & private messaging.",
+    description:
+      "Real-time developer chat app with MERN stack + Socket.IO, auth, and private messaging.",
     liveLink: "https://mkans-dev-chat-web.vercel.app/",
     githubLink: "https://github.com/Muhammedkans",
-    techStack: ["React", "Node", "Socket.IO", "MongoDB"],
+    tech: ["React", "Node.js", "Express", "MongoDB", "Socket.IO"],
   },
   {
-    title: "Portfolio Website",
-    description: "This very portfolio you’re viewing now! Built with React, Tailwind, Framer Motion, fully responsive.",
-    liveLink: "#home",
-    githubLink: "https://github.com/Muhammedkans",
-    techStack: ["React", "Tailwind", "Framer Motion"],
+    title: "ToDo List App",
+    description:
+      "Full-featured ToDo app with create, update, delete, and filter. Built with MERN + Tailwind.",
+    liveLink: "#",
+    githubLink: "#",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
   },
-  // Add more projects as needed
+  {
+    title: "Food Delivery Website",
+    description:
+      "MERN stack food delivery app with cart, checkout, and payment gateway (Razorpay).",
+    liveLink: "#",
+    githubLink: "#",
+    tech: ["React", "Tailwind", "Node.js", "MongoDB", "Redux"],
+  },
 ];
 
 function Projects() {
   return (
-    <div className="max-w-6xl mx-auto px-4">
-      {/* 🧠 Animated Heading */}
+    <section className="max-w-6xl mx-auto px-6">
       <motion.h2
-        initial={{ opacity: 0, y: -30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-3xl sm:text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-cyan-300 mb-8"
+        className="text-3xl md:text-4xl font-bold text-center mb-10 text-yellow-400"
       >
         My Projects
       </motion.h2>
 
-      {/* 📦 Project Cards */}
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.3 }}
-            className="bg-white/10 backdrop-blur-md text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2 }}
+            className="bg-white/5 border border-white/10 rounded-xl p-6 shadow-md hover:shadow-xl transition"
           >
-            <h3 className="text-xl font-bold text-yellow-300 mb-2">{project.title}</h3>
-            <p className="text-white/80">{project.description}</p>
+            <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+            <p className="text-white/70 mt-2">{project.description}</p>
 
-            {/* 🛠️ Tech Stack */}
+            {/* 🔖 Tech Stack Tags */}
             <div className="mt-3 flex flex-wrap gap-2">
-              {project.techStack.map((tech, i) => (
+              {project.tech.map((tech, i) => (
                 <span
                   key={i}
-                  className="bg-yellow-500/20 text-yellow-300 text-sm px-2 py-1 rounded-full"
+                  className="bg-yellow-400 text-black px-2 py-1 text-xs rounded-full"
                 >
                   {tech}
                 </span>
               ))}
             </div>
 
-            {/* 🔗 Links */}
+            {/* 🔗 Buttons */}
             <div className="mt-4 flex gap-4">
               <a
                 href={project.liveLink}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-cyan-400 hover:underline"
+                rel="noreferrer"
+                className="text-cyan-400 hover:underline flex items-center gap-1"
               >
-                <FaExternalLinkAlt /> Live Demo
+                Live <FaExternalLinkAlt size={14} />
               </a>
               <a
                 href={project.githubLink}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-white hover:underline"
+                rel="noreferrer"
+                className="text-white hover:underline flex items-center gap-1"
               >
-                <FaGithub /> GitHub
+                GitHub <FaGithub size={16} />
               </a>
             </div>
           </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
 export default Projects;
+
+
 
 
