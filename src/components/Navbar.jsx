@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
-
+import logo from "../assets/mk-logo.png";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -26,14 +26,16 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* 🔰 Logo */}
-        <ScrollLink
-          to="home"
-          smooth={true}
-          duration={500}
-          className="text-2xl font-bold text-yellow-400 cursor-pointer"
-        >
-          Akans.dev
-        </ScrollLink>
+       <ScrollLink
+  to="home"
+  smooth={true}
+  duration={500}
+  className="flex items-center gap-2 cursor-pointer"
+>
+  <img src={logo} alt="Logo" className="h-8" />
+  <span className="text-xl font-bold text-yellow-400">M Kans</span>
+</ScrollLink>
+
 
         {/* 🖱️ Desktop Menu */}
         <nav className="hidden md:flex gap-6 font-medium text-white/90">

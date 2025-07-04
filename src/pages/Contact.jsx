@@ -77,7 +77,7 @@ function Contact() {
         <div className="flex items-center gap-3">
           <FaLinkedin className="text-yellow-400" />
           <a
-            href="https://linkedin.com/in/muhammed-kans"
+            href="https://www.linkedin.com/in/muhammed-kans-8647b934a/"
             target="_blank"
             rel="noreferrer"
             className="hover:underline"

@@ -20,7 +20,7 @@ function Footer() {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/muhammed-kans"
+            href="https://www.linkedin.com/in/muhammed-kans-8647b934a/"
             target="_blank"
             rel="noreferrer"
             className="hover:text-yellow-400 transition"

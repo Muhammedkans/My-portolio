@@ -21,9 +21,9 @@ function About() {
         transition={{ delay: 0.2, duration: 0.6 }}
         className="text-lg text-white/80 leading-relaxed text-center max-w-2xl mx-auto"
       >
-        I'm <span className="font-semibold text-white">Muhammed Akans</span>, a self-taught MERN Stack Developer from Kerala.  
+        I'm <span className="font-semibold text-white">Muhammed kans</span>, a self-taught MERN Stack Developer from Kerala.  
         I’ve spent the last year mastering frontend and backend by building full real-world apps.  
-        My goal is to land a **fresher-level MERN developer role** and keep growing.
+        My goal is to land a  MERN developer role** and keep growing.
       </motion.p>
 
       {/* 🧾 Info Blocks */}

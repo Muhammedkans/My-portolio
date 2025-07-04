@@ -10,22 +10,6 @@ const projects = [
     githubLink: "https://github.com/Muhammedkans",
     tech: ["React", "Node.js", "Express", "MongoDB", "Socket.IO"],
   },
-  {
-    title: "ToDo List App",
-    description:
-      "Full-featured ToDo app with create, update, delete, and filter. Built with MERN + Tailwind.",
-    liveLink: "#",
-    githubLink: "#",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-  },
-  {
-    title: "Food Delivery Website",
-    description:
-      "MERN stack food delivery app with cart, checkout, and payment gateway (Razorpay).",
-    liveLink: "#",
-    githubLink: "#",
-    tech: ["React", "Tailwind", "Node.js", "MongoDB", "Redux"],
-  },
 ];
 
 function Projects() {
