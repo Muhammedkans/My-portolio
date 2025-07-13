@@ -31,7 +31,7 @@ function Footer() {
 
         {/* 🧾 Copyright */}
         <p className="text-white/70 text-sm">
-          © {new Date().getFullYear()} Muhammed Akans. All rights reserved.
+          © {new Date().getFullYear()} Muhammed kans. All rights reserved.
         </p>
 
         {/* ⬆️ Scroll to Top */}
