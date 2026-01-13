@@ -10,6 +10,15 @@ const projects = [
     githubLink: "https://github.com/Muhammedkans",
     tech: ["React", "Node.js", "Express", "MongoDB", "Socket.IO"],
   },
+  {
+    title: "FoodBey",
+    description:
+      "FoodBey is a scalable, real-time food delivery ecosystem connecting Customers, Restaurants, and Delivery Partners with role-based dashboards and live order tracking",
+    liveLink: "https://my-food-app-omega.vercel.app/",
+    githubLink: "https://github.com/Muhammedkans/my-food-app",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Socket.IO", "Typescript"],
+  },
+
 ];
 
 function Projects() {
