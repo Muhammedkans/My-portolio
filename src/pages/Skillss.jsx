@@ -26,27 +26,36 @@ const skills = [
 
 function Skillss() {
   return (
-    <section className="max-w-5xl mx-auto px-6">
-      <motion.h2
+    <section className="max-w-7xl mx-auto px-6 py-10" id="skills">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl font-bold text-center mb-10 text-yellow-400"
+        className="text-center mb-16"
       >
-        My Skills
-      </motion.h2>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600">
+          My Skills
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
+      </motion.div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ delay: index * 0.05, duration: 0.4 }}
-            className="bg-white/5 text-white p-6 rounded-xl flex flex-col items-center shadow-md border border-white/10 hover:shadow-xl transition-all"
+            className="group relative bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex flex-col items-center gap-4 hover:border-cyan-500/50 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-300"
           >
-            <div className="text-4xl mb-3">{skill.icon}</div>
-            <p className="text-sm font-medium">{skill.name}</p>
+            <div className="text-5xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 drop-shadow-lg">
+              {skill.icon}
+            </div>
+            <p className="text-lg font-medium text-slate-300 group-hover:text-white transition-colors">
+              {skill.name}
+            </p>
           </motion.div>
         ))}
       </div>

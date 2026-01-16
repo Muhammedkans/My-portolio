@@ -19,11 +19,12 @@ function ScrollToTopButton() {
   if (!show) return null;
 
   return (
+
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-yellow-400 hover:bg-yellow-500 shadow-lg transition"
+      className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 shadow-[0_0_15px_rgba(6,182,212,0.5)] transition hover:scale-110"
     >
-      <FaArrowUp className="text-black" />
+      <FaArrowUp className="text-white text-lg" />
     </button>
   );
 }
