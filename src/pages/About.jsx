@@ -34,7 +34,7 @@ function About() {
             My journey into the world of tech has been driven by a relentless curiosity and a desire to build things that matter. I specialize in building robust, scalable web applications that not only function perfectly but also look stunning.
           </p>
           <p>
-            I am currently seeking opportunities to bring my skills in <span className="text-purple-400">React, Node.js, and Modern UI/UX</span> to a forward-thinking team.
+            I am currently seeking opportunities to bring my skills in <span className="text-purple-400">React, Node.js, Express, MongoDb and Modern UI/UX</span> to a forward-thinking team.
           </p>
         </motion.div>
 

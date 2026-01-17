@@ -34,7 +34,7 @@ function Footer() {
 
         {/* 🧾 Copyright */}
         <p className="text-slate-500 text-sm font-light">
-          © {new Date().getFullYear()} <span className="text-white font-medium">Muhammed Kans</span>. Built with ❤️ & React.
+          © {new Date().getFullYear()} <span className="text-white font-medium">Muhammed Kans</span>.
         </p>
 
         {/* ⬆️ Scroll to Top */}

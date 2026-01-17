@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaFilePdf } from "react-icons/fa";
 import profileImg from "../assets/profile.png"; // 🖼️ Replace with your image
 
 
 function Home() {
   return (
     <section className="relative flex flex-col-reverse md:flex-row items-center justify-between gap-10 max-w-7xl mx-auto px-6 py-12 md:py-20 overflow-hidden">
-      
+
       {/* 🌟 Background Glow Effect */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
@@ -22,14 +22,14 @@ function Home() {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-          Hi, I'm <br />
+          Hi, I'm  <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-md">
-            M Kans
+            Muhammed Kans
           </span>
         </h1>
 
         <p className="mt-6 text-lg md:text-xl text-slate-300 font-light max-w-lg leading-relaxed">
-          Crafting high-performance web applications with <span className="text-white font-semibold">React, Node.js, & MongoDB</span>. 
+          Crafting high-performance web applications with <span className="text-white font-semibold">React, Node.js, & MongoDB</span>.
           Ready to build the future of the web.
         </p>
 
@@ -44,10 +44,11 @@ function Home() {
 
           <a
             href="/resume.pdf"
-            download="Muhammed_Kans_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group bg-transparent border border-white/20 hover:border-white/50 hover:bg-white/5 text-white px-8 py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all backdrop-blur-sm"
           >
-            <FaDownload className="text-cyan-400 group-hover:text-white transition-colors" size={16} /> 
+            <FaFilePdf className="text-cyan-400 group-hover:text-white transition-colors" size={16} />
             <span>Resume</span>
           </a>
         </div>
@@ -62,7 +63,7 @@ function Home() {
       >
         {/* Animated Gradient Border */}
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
-        
+
         <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl bg-[#0f0c29]">
           <img
             src={profileImg}
