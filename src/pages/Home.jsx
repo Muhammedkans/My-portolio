@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaDownload, FaFilePdf, FaUserTie } from "react-icons/fa";
-import profileImg from "../assets/profile.png"; // 🖼️ Replace with your image
+import profileImg from "../assets/profile.jpeg"; // 🖼️ Replace with your image
 
 
 function Home() {
