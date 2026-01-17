@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaDownload, FaFilePdf } from "react-icons/fa";
+import { FaDownload, FaFilePdf, FaUserTie } from "react-icons/fa";
 import profileImg from "../assets/profile.png"; // 🖼️ Replace with your image
 
 
@@ -42,15 +42,29 @@ function Home() {
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
 
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group bg-transparent border border-white/20 hover:border-white/50 hover:bg-white/5 text-white px-8 py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all backdrop-blur-sm"
-          >
-            <FaFilePdf className="text-cyan-400 group-hover:text-white transition-colors" size={16} />
-            <span>Resume</span>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-transparent border border-white/20 hover:border-white/50 hover:bg-white/5 text-white px-6 py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all backdrop-blur-sm whitespace-nowrap"
+              title="Professional ATS Friendly Resume"
+            >
+              <FaFilePdf className="text-cyan-400 group-hover:text-white transition-colors" size={16} />
+              <span>ATS Resume</span>
+            </a>
+
+            <a
+              href="/resume-photo.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-transparent border border-white/20 hover:border-white/50 hover:bg-white/5 text-white px-6 py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all backdrop-blur-sm whitespace-nowrap"
+              title="Creative Resume with Photo"
+            >
+              <FaUserTie className="text-purple-400 group-hover:text-white transition-colors" size={16} />
+              <span>Visual Resume</span>
+            </a>
+          </div>
         </div>
       </motion.div>
 
